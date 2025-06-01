@@ -22,7 +22,7 @@ export default function Icosahedron({
   ...props
 }: any) {
   const { nodes, materials } = useGLTF(
-    "/models/icosphere.glb"
+    `${process.env.PUBLIC_URL}/models/icosphere.glb`
   ) as unknown as GLTFResult;
 
   const materialRef = React.useRef<MeshStandardMaterial>(null!);
@@ -60,4 +60,4 @@ export default function Icosahedron({
   );
 }
 
-useGLTF.preload("/models/icosphere.glb");
+useGLTF.preload(`${process.env.PUBLIC_URL}/models/icosphere.glb`);
