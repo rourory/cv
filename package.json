@@ -1,7 +1,7 @@
 {
   "name": "cv",
   "version": "0.1.0",
-  "homepage": "https://rourory.github.io/",
+  "homepage": "https://rourory.github.io/cv",
   "private": true,
   "dependencies": {
     "@react-three/drei": "^10.1.2",

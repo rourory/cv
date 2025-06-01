@@ -4,7 +4,7 @@ import MainPage from "./pages/MainPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<MainPage />} />
       </Routes>
