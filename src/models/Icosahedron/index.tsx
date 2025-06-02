@@ -42,14 +42,13 @@ export default function Icosahedron({
   return (
     <group {...props} dispose={null}>
       <mesh
-        scale={0.8}
+        scale={0.7}
         geometry={nodes.Icosphere.geometry}
         material={materials.base}
         castShadow
         receiveShadow
       >
         <meshStandardMaterial
-          // color={color}
           metalness={0.2}
           roughness={roughness}
           map={materials.base.map}

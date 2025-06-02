@@ -37,20 +37,16 @@ export default function Connector({
   return (
     <RigidBody
       linearDamping={4}
-      angularDamping={1}
+      angularDamping={2}
       friction={0.1}
       position={pos}
       ref={api}
       colliders={false}
     >
-      <CuboidCollider args={[0.75, 0.75, 0.75]} />
+      <CuboidCollider args={[0.55, 0.55, 0.55]} />
       {children ? children : <Icosahedron {...props} />}
       {accent && (
-        <pointLight
-          intensity={8}
-          distance={4.5}
-          /*color={props.color}*/ ref={pointLightRef}
-        />
+        <pointLight intensity={8} distance={4.5} ref={pointLightRef} />
       )}
     </RigidBody>
   );
