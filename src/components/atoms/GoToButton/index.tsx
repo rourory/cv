@@ -57,7 +57,7 @@ const GoToButton: React.FC<IGoToButton> = ({
         )}
       >
         {direction === "left" && <Arrow />}
-        <p className="text-md md:text-xl lg:text-2xl 2xl:text-3xl">
+        <p className="text-md md:text-xl lg:text-2xl">
           {children}
         </p>
         {direction === "right" && <Arrow />}
