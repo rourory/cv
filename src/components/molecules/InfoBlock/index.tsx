@@ -1,7 +1,7 @@
 import React from "react";
-import Devider from "../Devider";
+import Divider from "../../atoms/Divider";
 import { cn } from "../../../lib/utils";
-import KnowledgeLevelBadge from "../Badge";
+import KnowledgeLevelBadge from "../../atoms/Badge";
 
 export interface InfoBlockData {
   icon?: string;
@@ -25,7 +25,7 @@ const InfoBlock: React.FC<IInfoBlock> = ({
   return (
     <div
       className={cn(
-        "bg-opacity-80 flex flex-col relative min-w-[300px] max-w-[700px] col-span-1 px-3 sm:px-10 pb-10 pt-5 rounded-3xl shadow-[1px_0px_15px_rgba(255,255,255,0.1)] transition-all duration-200 pointer-events-auto backdrop-blur-3xl hover:bg-slate-800",
+        "flex flex-col relative min-w-[300px] max-w-[700px] col-span-1 px-3 sm:px-10 pb-10 pt-5 rounded-3xl shadow-[1px_0px_15px_rgba(255,255,255,0.1)] transition-all duration-200 pointer-events-auto bg-slate-800",
         className
       )}
     >
@@ -41,7 +41,7 @@ const InfoBlock: React.FC<IInfoBlock> = ({
         )}
         <h2 className="text-2xl">{title}</h2>
       </div>
-      <Devider />
+      <Divider />
       <p>{children}</p>
       {data && (
         <table className="mt-5">

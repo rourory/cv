@@ -1,4 +1,4 @@
-import { InfoBlockData } from "../components/atoms/InfoBlock";
+import { InfoBlockData } from "../components/molecules/InfoBlock";
 
 export const javaScriptStack: Array<InfoBlockData> = [
   { technology: "TypeScript", level: "advanced", icon: "typescript.svg" },

@@ -21,17 +21,17 @@ const SocialMediaLink: React.FC<ISocialMediaLink> = ({
       target={disabled ? "_self" : "_blank"}
       rel={disabled ? "" : "noopener noreferrer"}
       className={cn(
-        "flex justify-center items-center gap-2 text-xl border rounded-md w-[200px] py-1 hover:bg-slate-800 transition-all duration-200",
+        "flex justify-center items-center gap-2 text-lg border rounded-md min-w-[45px] max-w-[150px] h-[45px] py-2 px-3 hover:bg-slate-800 transition-all duration-200",
         disabled ? "cursor-not-allowed scale-75 opacity-30" : ""
       )}
     >
       <img
         src={`${process.env.PUBLIC_URL}/icons/${icon}`}
-        width={50}
-        height={50}
+        width={40}
+        height={40}
         alt={`${name}-icon`}
       />
-      <p>{name}</p>
+      <p className="hidden lg:block">{name}</p>
     </a>
   );
 };

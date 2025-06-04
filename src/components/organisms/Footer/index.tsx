@@ -1,5 +1,6 @@
-import Devider from "../../atoms/Devider";
+import Divider from "../../atoms/Divider";
 import SocialMediaLink from "../../atoms/SocialMediaLink";
+import { motion, AnimatePresence, animate } from "framer-motion";
 
 const socialMedia: Array<{
   icon: string;
@@ -41,17 +42,22 @@ const socialMedia: Array<{
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="absolute text-app w-full h-[20vh] top-[80vh] lg:h-[15vh] lg:top-[85vh] left-0 z-50 backdrop-blur p-3 overflow-scroll shadow-[1px_-5px_10px_rgba(255,255,255,0.1)]">
+    <motion.footer
+      initial={{ opacity: 0, y: 120 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", duration: 4, delay: 2.5 }}
+      className="absolute left-0 bottom-0 h-[130px] flex flex-col sm:flex-row justify-center items-center z-50 w-full backdrop-blur shadow-[1px_-5px_10px_rgba(255,255,255,0.1)]"
+    >
+      <div className="relative text-app w-full left-0 z-50 p-1">
         <p className="text-3xl text-center">Contact me:</p>
-        <Devider />
-        <div className="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-4">
+        <Divider />
+        <div className="flex justify-evenly mt-4">
           {socialMedia.map((item) => (
             <SocialMediaLink key={item.link} {...item} />
           ))}
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

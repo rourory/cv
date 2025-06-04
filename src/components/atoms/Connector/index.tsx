@@ -4,6 +4,7 @@ import React from "react";
 import { MathUtils, PointLight, Vector3 } from "three";
 import Icosahedron from "../../../models/Icosahedron";
 import { easing } from "maath";
+import ConnectorModel from "../../../models/ConnectorModel";
 
 export default function Connector({
   position,
@@ -37,16 +38,18 @@ export default function Connector({
   return (
     <RigidBody
       linearDamping={4}
-      angularDamping={2}
+      angularDamping={1}
       friction={0.1}
       position={pos}
       ref={api}
       colliders={false}
     >
-      <CuboidCollider args={[0.55, 0.55, 0.55]} />
-      {children ? children : <Icosahedron {...props} />}
+      <CuboidCollider args={[0.38, 1.27, 0.38]} />
+      <CuboidCollider args={[1.27, 0.38, 0.38]} />
+      <CuboidCollider args={[0.38, 0.38, 1.27]} />
+      {children ? children : <ConnectorModel {...props} />}
       {accent && (
-        <pointLight intensity={8} distance={4.5} ref={pointLightRef} />
+        <pointLight intensity={4} distance={2.5} color={props.color} />
       )}
     </RigidBody>
   );

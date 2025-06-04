@@ -11,6 +11,7 @@ import {
 } from "@react-three/drei";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import ModelLoader from "../../molecules/ModelLoader";
+import ConnectorModel from "../../../models/ConnectorModel";
 
 const Scene = (props: any) => {
   return (
@@ -37,7 +38,7 @@ const Scene = (props: any) => {
             props.connectors.map((props: any, i:number) => <Connector key={i} {...props} />) /* prettier-ignore */
           }
           <Connector position={[10, 10, 5]}>
-            <Icosahedron>
+            <ConnectorModel>
               <MeshTransmissionMaterial
                 clearcoat={1}
                 thickness={0.1}
@@ -46,7 +47,7 @@ const Scene = (props: any) => {
                 samples={8}
                 resolution={512}
               />
-            </Icosahedron>
+            </ConnectorModel>
           </Connector>
         </Physics>
         <EffectComposer enableNormalPass={false} multisampling={8}>

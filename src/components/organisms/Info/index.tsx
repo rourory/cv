@@ -4,11 +4,22 @@ import {
   additionalSkills,
   languagesStack,
 } from "../../../db/info";
-import InfoBlock from "../../atoms/InfoBlock";
+import InfoBlock from "../../molecules/InfoBlock";
+import { motion } from "framer-motion";
 
-const Info = () => {
+const Info: React.FC<AnimationPresenceSectionProps> = ({
+  initial,
+  animate,
+  exit,
+}) => {
   return (
-    <div className="absolute z-20 top-[15vh] h-[65vh] lg:h-[70vh] min-w-[375px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10">
+    <motion.section
+      key={"info"}
+      initial={initial}
+      animate={animate}
+      exit={exit}
+      className="relative z-20 h-[calc(100vh-280px)] min-w-[375px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10"
+    >
       <div
         id="scrollable-left"
         className="absolute left-0 z-10 w-[30vw] h-full pointer-events-auto"
@@ -79,7 +90,7 @@ const Info = () => {
           german.
         </InfoBlock>
       </div>
-    </div>
+    </motion.section>
   );
 };
 
