@@ -52,7 +52,7 @@ const GoToButton: React.FC<IGoToButton> = ({
       <button
         onClick={onClick}
         className={cn(
-          "flex items-center justify-between gap-2 text-xl text-app border rounded-md p-2 transition-all duration-200 hover:translate-x-4 hover:bg-slate-800 mx-2 w-[130px]",
+          "flex items-center justify-between gap-2 text-xl text-app border rounded-md p-2 transition-all duration-200 hover:translate-x-4 hover:bg-slate-800 mx-2 w-[140px]",
           translate
         )}
       >

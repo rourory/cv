@@ -37,23 +37,15 @@ const Scene = (props: any) => {
           {
             props.connectors.map((props: any, i:number) => <Connector key={i} {...props} />) /* prettier-ignore */
           }
-          <Connector position={[10, 10, 5]}>
-            <ConnectorModel>
-              <MeshTransmissionMaterial
-                clearcoat={1}
-                thickness={0.1}
-                anisotropicBlur={0.1}
-                chromaticAberration={0.1}
-                samples={8}
-                resolution={512}
-              />
-            </ConnectorModel>
-          </Connector>
         </Physics>
         <EffectComposer enableNormalPass={false} multisampling={8}>
           <N8AO distanceFalloff={1} aoRadius={1} intensity={4} />
         </EffectComposer>
-        <Environment resolution={256} preset="studio" environmentIntensity={0.2}>
+        <Environment
+          resolution={256}
+          preset="studio"
+          environmentIntensity={0.2}
+        >
           <group rotation={[-Math.PI / 3, 0, 1]}>
             <Lightformer
               form="circle"
