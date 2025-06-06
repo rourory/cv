@@ -13,8 +13,11 @@ const shuffle: Shuffle = (accent = 0) => [
   { color: "green", roughness: 0.1 },
   { color: "cyan", roughness: 0.15 },
   { color: "black", roughness: 0.1 },
+  { color: "white", roughness: 0.1 },
+  { color: "grey", roughness: 0.1 },
   { color: accents[accent], roughness: 0.1, accent: true },
   { color: accents[accent], roughness: 0.01, accent: true },
+  { color: accents[accent], roughness: 0.05, accent: true },
   { color: accents[accent], roughness: 0.05, accent: true },
 ];
 

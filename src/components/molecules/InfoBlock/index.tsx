@@ -25,7 +25,7 @@ const InfoBlock: React.FC<IInfoBlock> = ({
   return (
     <div
       className={cn(
-        "flex flex-col relative min-w-[300px] max-w-[700px] col-span-1 px-3 sm:px-10 pb-10 pt-5 rounded-3xl shadow-[1px_0px_15px_rgba(255,255,255,0.1)] transition-all duration-200 pointer-events-auto bg-slate-800",
+        "flex flex-col relative min-w-[300px] max-w-[750px] col-span-1 px-3 sm:px-10 pb-10 pt-5 rounded-3xl shadow-[1px_0px_15px_rgba(255,255,255,0.1)] transition-all duration-200 pointer-events-auto bg-slate-800",
         className
       )}
     >
@@ -39,7 +39,7 @@ const InfoBlock: React.FC<IInfoBlock> = ({
             className="object-contain w-[30px] h-[30px] mr-5"
           />
         )}
-        <h2 className="text-2xl">{title}</h2>
+        <h2 className="text-2xl font-bold">{title}</h2>
       </div>
       <Divider />
       <p>{children}</p>

@@ -1,7 +1,6 @@
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
 import React from "react";
 import { cn } from "../../../lib/utils";
-import { motion } from "framer-motion";
 
 interface IGoToButton extends React.PropsWithChildren, IComponentWithClassName {
   direction: "left" | "right" | "up" | "down";
@@ -57,9 +56,7 @@ const GoToButton: React.FC<IGoToButton> = ({
         )}
       >
         {direction === "left" && <Arrow />}
-        <p className="text-md md:text-xl lg:text-2xl">
-          {children}
-        </p>
+        <p className="text-md md:text-xl lg:text-2xl">{children}</p>
         {direction === "right" && <Arrow />}
       </button>
     </div>

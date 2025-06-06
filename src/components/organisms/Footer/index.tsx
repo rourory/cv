@@ -1,6 +1,6 @@
 import Divider from "../../atoms/Divider";
 import SocialMediaLink from "../../atoms/SocialMediaLink";
-import { motion, AnimatePresence, animate } from "framer-motion";
+import { motion } from "framer-motion";
 
 const socialMedia: Array<{
   icon: string;

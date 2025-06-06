@@ -2,7 +2,6 @@ import { useFrame } from "@react-three/fiber";
 import { CuboidCollider, RigidBody } from "@react-three/rapier";
 import React from "react";
 import { MathUtils, PointLight, Vector3 } from "three";
-import Icosahedron from "../../../models/Icosahedron";
 import { easing } from "maath";
 import ConnectorModel from "../../../models/ConnectorModel";
 

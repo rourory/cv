@@ -28,7 +28,7 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
         id="scrollable-right"
         className="absolute right-0 z-10 w-[30vw] h-full pointer-events-auto"
       />
-      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-14 z-30">
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-14 z-30 ">
         <InfoBlock
           icon="javascript.svg"
           title="JavaScript"

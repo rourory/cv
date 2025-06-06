@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
@@ -21,6 +20,10 @@ export default function ConnectorModel({
   roughness = 0,
   ...props
 }: any) {
+  const { nodes, materials } = useGLTF(
+    `${process.env.PUBLIC_URL}/models/connector.glb`
+  ) as unknown as GLTFResult;
+
   const materialRef = React.useRef<MeshStandardMaterial>(null!);
 
   useFrame((state, delta) => {
@@ -34,10 +37,6 @@ export default function ConnectorModel({
       materialRef.current.color.set(color);
     }
   }, []);
-
-  const { nodes, materials } = useGLTF(
-    `${process.env.PUBLIC_URL}/models/connector.glb`
-  ) as unknown as GLTFResult;
 
   return (
     <group {...props} dispose={null}>
