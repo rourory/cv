@@ -1,11 +1,15 @@
 import React from "react";
-import Divider from "../../atoms/Divider";
 import { cn } from "../../../lib/utils";
 import KnowledgeLevelBadge from "../../atoms/Badge";
+import BlockTitle from "../../atoms/BlockTitle";
 
-export interface InfoBlockData {
+export interface Technology {
   icon?: string;
   technology: string;
+}
+
+export interface InfoBlockData {
+  technology: Technology;
   level: "beginner" | "intermediate" | "advanced";
 }
 
@@ -29,19 +33,7 @@ const InfoBlock: React.FC<IInfoBlock> = ({
         className
       )}
     >
-      <div className="flex align-center">
-        {icon && (
-          <img
-            src={`${process.env.PUBLIC_URL}/icons/${icon}`}
-            width={30}
-            height={30}
-            alt={title}
-            className="object-contain w-[30px] h-[30px] mr-5"
-          />
-        )}
-        <h2 className="text-2xl font-bold">{title}</h2>
-      </div>
-      <Divider />
+      <BlockTitle icon={icon} title={title} />
       <p>{children}</p>
       {data && (
         <table className="mt-5">
@@ -54,22 +46,22 @@ const InfoBlock: React.FC<IInfoBlock> = ({
           <tbody>
             {data.map((item) => (
               <tr
-                key={item.technology}
+                key={item.technology.technology}
                 className="border-b border-[#c4c7ca] border-opacity-30"
               >
                 <th className="text-center p-[5px] pl-[15px] flex">
-                  {item.icon ? (
+                  {item.technology.icon ? (
                     <img
                       className="object-contain w-[30px] h-[30px]"
-                      src={`${process.env.PUBLIC_URL}/icons/${item.icon}`}
+                      src={`${process.env.PUBLIC_URL}/${item.technology.icon}`}
                       width={30}
                       height={30}
-                      alt={item.technology}
+                      alt={item.technology.technology}
                     />
                   ) : (
                     <div className="w-[30px]" />
                   )}
-                  <p className="ml-4">{item.technology}</p>
+                  <p className="ml-4">{item.technology.technology}</p>
                 </th>
                 <th className="text-center p-[5px]">
                   <KnowledgeLevelBadge level={item.level} />

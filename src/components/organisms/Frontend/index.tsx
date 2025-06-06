@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import PortfolioProjectBlock from "../../molecules/PortfolioProjectBlock";
 
 const Frontend: React.FC<AnimationPresenceSectionProps> = ({
   initial,
@@ -9,15 +10,44 @@ const Frontend: React.FC<AnimationPresenceSectionProps> = ({
   return (
     <motion.section
       key={"frontend"}
-      initial={initial}
-      animate={animate}
-      exit={exit}
-      className="relative z-20 h-[calc(100vh-280px)] min-w-[375px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10"
+      // initial={initial}
+      // animate={animate}
+      // exit={exit}
+      className="relative z-20 h-[calc(100vh-280px)] min-w-[375px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10 flex flex-col gap-5"
     >
-      Frontend Frontend Frontend Frontend Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Dolorem optio quaerat totam, accusantium provident
-      consequuntur tempore quidem, itaque aliquid quas cumque ipsa? Aperiam
-      illum esse reprehenderit ad hic veniam quas?
+      <PortfolioProjectBlock
+        title="Printique"
+        language="JavaScript"
+        technologies={[]}
+        animate={animate}
+        initial={initial}
+        exit={exit}
+        order={1}
+      >
+        sdaddasd
+      </PortfolioProjectBlock>
+      <PortfolioProjectBlock
+        title="Printique"
+        language="JavaScript"
+        technologies={[]}
+        animate={animate}
+        initial={initial}
+        exit={exit}
+        order={2}
+      >
+        sdaddasd
+      </PortfolioProjectBlock>
+      <PortfolioProjectBlock
+        title="Printique"
+        language="JavaScript"
+        technologies={[]}
+        animate={animate}
+        initial={initial}
+        exit={exit}
+        order={3}
+      >
+        sdaddasd
+      </PortfolioProjectBlock>
     </motion.section>
   );
 };

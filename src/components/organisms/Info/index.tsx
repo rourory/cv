@@ -30,7 +30,7 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
       />
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-14 z-30 ">
         <InfoBlock
-          icon="javascript.svg"
+          icon="icons/javascript.svg"
           title="JavaScript"
           techlologies={javaScriptStack}
           className="z-30"
@@ -44,7 +44,7 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
           interactive, and responsive interfaces.
         </InfoBlock>
         <InfoBlock
-          icon="java.svg"
+          icon="icons/java.svg"
           title="Java"
           techlologies={javaStack}
           className="z-30"
@@ -57,7 +57,7 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
           this language.
         </InfoBlock>
         <InfoBlock
-          icon="skills.svg"
+          icon="icons/skills.svg"
           title="Extra skills"
           techlologies={additionalSkills}
           className="z-30"
@@ -75,7 +75,7 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
           observing the principles of normalization and scalability.
         </InfoBlock>
         <InfoBlock
-          icon="languages.png"
+          icon="icons/languages.png"
           title="Languages"
           techlologies={languagesStack}
           className="z-30"
