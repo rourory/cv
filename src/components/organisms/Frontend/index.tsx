@@ -1,6 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
 import PortfolioProjectBlock from "../../molecules/PortfolioProjectBlock";
+import Scrollable from "../../atoms/Scrollable";
+import * as technologies from "../../../db/technologies";
+import {frontendProjects} from "../../../db/frontend-projects";
+
 
 const Frontend: React.FC<AnimationPresenceSectionProps> = ({
   initial,
@@ -8,47 +11,25 @@ const Frontend: React.FC<AnimationPresenceSectionProps> = ({
   exit,
 }) => {
   return (
-    <motion.section
-      key={"frontend"}
-      // initial={initial}
-      // animate={animate}
-      // exit={exit}
-      className="relative z-20 h-[calc(100vh-280px)] min-w-[375px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10 flex flex-col gap-5"
-    >
-      <PortfolioProjectBlock
-        title="Printique"
-        language="JavaScript"
-        technologies={[]}
-        animate={animate}
-        initial={initial}
-        exit={exit}
-        order={1}
-      >
-        sdaddasd
-      </PortfolioProjectBlock>
-      <PortfolioProjectBlock
-        title="Printique"
-        language="JavaScript"
-        technologies={[]}
-        animate={animate}
-        initial={initial}
-        exit={exit}
-        order={2}
-      >
-        sdaddasd
-      </PortfolioProjectBlock>
-      <PortfolioProjectBlock
-        title="Printique"
-        language="JavaScript"
-        technologies={[]}
-        animate={animate}
-        initial={initial}
-        exit={exit}
-        order={3}
-      >
-        sdaddasd
-      </PortfolioProjectBlock>
-    </motion.section>
+    <section className="relative flex flex-col z-20 h-[calc(100vh-280px)] min-w-[375px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10 gap-5">
+      <Scrollable />
+      {frontendProjects.map((project,i) => (
+        <PortfolioProjectBlock
+          key={project.title}
+          title={project.title}
+          language={project.language}
+          technologies={project.technologies}
+          animate={animate}
+          initial={initial}
+          exit={exit}
+          order={i}
+          icon={project.icon}
+          projectLink={project.projectLink}
+        >
+          {project.description}
+        </PortfolioProjectBlock>
+      ))}
+    </section>
   );
 };
 

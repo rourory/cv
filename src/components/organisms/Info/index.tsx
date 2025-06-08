@@ -4,6 +4,7 @@ import {
   additionalSkills,
   languagesStack,
 } from "../../../db/info";
+import Scrollable from "../../atoms/Scrollable";
 import InfoBlock from "../../molecules/InfoBlock";
 import { motion } from "framer-motion";
 
@@ -20,14 +21,7 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
       exit={exit}
       className="relative z-20 h-[calc(100vh-280px)] min-w-[375px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10"
     >
-      <div
-        id="scrollable-left"
-        className="absolute left-0 z-10 w-[30vw] h-full pointer-events-auto"
-      />
-      <div
-        id="scrollable-right"
-        className="absolute right-0 z-10 w-[30vw] h-full pointer-events-auto"
-      />
+      <Scrollable />
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-14 z-30 ">
         <InfoBlock
           icon="icons/javascript.svg"

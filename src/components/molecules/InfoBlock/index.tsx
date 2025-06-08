@@ -6,6 +6,7 @@ import BlockTitle from "../../atoms/BlockTitle";
 export interface Technology {
   icon?: string;
   technology: string;
+  link?: string;
 }
 
 export interface InfoBlockData {

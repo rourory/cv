@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "../../../lib/utils";
 
 interface IGoToButton extends React.PropsWithChildren, IComponentWithClassName {
-  direction: "left" | "right" | "up" | "down";
+  direction: "left" | "right" | "up" | "down" | "none";
   onClick?: () => void;
 }
 
@@ -24,6 +24,8 @@ const GoToButton: React.FC<IGoToButton> = ({
           return <ArrowUp />;
         case "down":
           return <ArrowDown />;
+        case "none":
+          return <></>;
         default:
           return <ArrowLeft />;
       }
