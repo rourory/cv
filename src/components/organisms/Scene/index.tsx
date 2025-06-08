@@ -11,8 +11,6 @@ import {
 import {
   DepthOfField,
   EffectComposer,
-  N8AO,
-  Noise,
   Vignette,
 } from "@react-three/postprocessing";
 import ModelLoader from "../../molecules/ModelLoader";
@@ -48,7 +46,7 @@ const Scene = (props: any) => {
         <Physics /*debug*/ gravity={[0, 0, 0]}>
           <Pointer />
           {
-            props.connectors.map((props: any, i:number) => <Connector key={i} {...props} />) /* prettier-ignore */
+            props.connectors.map((props: any, i:number) => <Connector key={i} {...props} ></Connector>) /* prettier-ignore */
           }
         </Physics>
         {effects && (
