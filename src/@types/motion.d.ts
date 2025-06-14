@@ -1,4 +1,4 @@
-declare interface AnimationPresenceSectionProps {
+interface AnimationPresenceSectionProps {
   initial: boolean | TargetAndTransition | VariantLabels | undefined;
   animate:
     | boolean

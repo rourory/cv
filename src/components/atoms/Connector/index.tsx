@@ -1,9 +1,8 @@
 import { useFrame } from "@react-three/fiber";
-import { BallCollider, CuboidCollider, RigidBody } from "@react-three/rapier";
+import { BallCollider, RigidBody } from "@react-three/rapier";
 import React from "react";
 import { MathUtils, PointLight, Vector3 } from "three";
 import { easing } from "maath";
-import ConnectorModel from "../../../models/ConnectorModel";
 import { SphereModel } from "../../../models/SphereModel";
 
 export default function Connector({
@@ -44,7 +43,7 @@ export default function Connector({
       ref={api}
       colliders={false}
     >
-      <BallCollider args={[1]}/>
+      <BallCollider args={[1]} />
       {children ? children : <SphereModel {...props} />}
       {accent && (
         <pointLight intensity={4} distance={2.5} color={props.color} />

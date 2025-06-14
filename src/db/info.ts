@@ -1,4 +1,3 @@
-import { InfoBlockData } from "../components/molecules/InfoBlock";
 import * as technologies from "./technologies";
 
 export const javaScriptStack: Array<InfoBlockData> = [

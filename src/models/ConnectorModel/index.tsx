@@ -1,18 +1,8 @@
 import React from "react";
 import { useGLTF } from "@react-three/drei";
-import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
-import { Mesh, MeshStandardMaterial } from "three";
-
-type GLTFResult = GLTF & {
-  nodes: {
-    connector: Mesh;
-  };
-  materials: {
-    base: MeshStandardMaterial;
-  };
-};
+import { MeshStandardMaterial } from "three";
 
 export default function ConnectorModel({
   children,

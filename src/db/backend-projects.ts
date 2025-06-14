@@ -1,1 +1,51 @@
-export const mock = "";
+import * as technologies from "./technologies";
+
+const telephonyDemoApi: PortfolioProject = {
+  title: "Telephony Demo API",
+  language: "JavaScript",
+  projectLink: "https://rourory.github.io/telephony-demo",
+  icon: "apps/telephony.svg",
+  technologies: [
+    technologies.typescript,
+    technologies.nextJs,
+    technologies.prisma,
+    technologies.postgresql,
+    technologies.nodeJs,
+    technologies.vscode,
+  ],
+  description: "Just for demo purposes.",
+};
+
+const telephonyServer: PortfolioProject = {
+  title: "Telephony Server",
+  language: "Java",
+  icon: "apps/telephony.svg",
+  technologies: [
+    technologies.springBoot3,
+    technologies.springDataJPA,
+    technologies.springWeb,
+    technologies.springSecurity,
+    technologies.swaggerOpenAPI,
+    technologies.gradle,
+    technologies.hibernate5,
+    technologies.queryDSL,
+    technologies.postgresql,
+    technologies.liquibase,
+    technologies.intellijidea,
+  ],
+  description: "Server for telephony desktop.",
+};
+
+const telephonyRemoteTerminal: PortfolioProject = {
+  title: "Telephony Remote Terminal",
+  language: "C#",
+  icon: "apps/telephony.svg",
+  technologies: [technologies.vs2022, technologies.voskAPI],
+  description: "Remote service for telephony.",
+};
+
+export const backendProjects: Array<PortfolioProject> = [
+  telephonyDemoApi,
+  telephonyServer,
+  telephonyRemoteTerminal,
+];

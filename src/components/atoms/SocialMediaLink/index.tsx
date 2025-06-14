@@ -2,13 +2,6 @@
 import React from "react";
 import { cn } from "../../../lib/utils";
 
-interface ISocialMediaLink {
-  icon: string;
-  link: string;
-  name: string;
-  disabled: boolean;
-}
-
 const SocialMediaLink: React.FC<ISocialMediaLink> = ({
   icon,
   link,

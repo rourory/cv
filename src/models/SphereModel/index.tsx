@@ -1,20 +1,8 @@
 import React from "react";
 import { useGLTF } from "@react-three/drei";
-import { GLTF } from "three-stdlib";
-import { Mesh, MeshStandardMaterial } from "three";
+import { MeshStandardMaterial } from "three";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
-
-type GLTFResult = GLTF & {
-  nodes: {
-    Outer: Mesh;
-    Inner: Mesh;
-  };
-  materials: {
-    base: MeshStandardMaterial;
-    Metal: MeshStandardMaterial;
-  };
-};
 
 export function SphereModel({
   children,
@@ -28,7 +16,7 @@ export function SphereModel({
 
   const materialRef = React.useRef<MeshStandardMaterial>(null!);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (materialRef.current) {
       easing.dampC(materialRef.current.color, color, 0.25, delta);
       easing.dampC(materialRef.current.emissive, color, 0.25, delta);

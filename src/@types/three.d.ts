@@ -1,6 +1,15 @@
-declare type Shuffle = (accent?: number) => Array<IShuffleObject>;
+type Shuffle = (accent?: number) => Array<IShuffleObject>;
 
-declare interface IShuffleObject {
+interface IShuffleObject {
   color: string;
   roughness: number;
 }
+
+type GLTFResult = GLTF & {
+  nodes: {
+    connector: Mesh;
+  };
+  materials: {
+    base: MeshStandardMaterial;
+  };
+};

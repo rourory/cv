@@ -6,8 +6,9 @@ import Info from "../../components/organisms/Info";
 import { AnimatePresence } from "framer-motion";
 import { useInfoPageStore } from "../../store/info-page-store";
 import React from "react";
-import Frontend from "../../components/organisms/Frontend";
-import Backend from "../../components/organisms/Backend";
+import PortfolioPage from "../../components/organisms/PortfolioPage";
+import { frontendProjects } from "../../db/frontend-projects";
+import { backendProjects } from "../../db/backend-projects";
 
 const initialTransition = { type: "spring", duration: 1, delay: 0 };
 const animateTransition = { type: "spring", duration: 1, delay: 1 };
@@ -18,7 +19,6 @@ const infoConfig: AnimationPresenceSectionProps = {
   animate: { opacity: 1, transition: animateTransition },
   exit: { opacity: 0, transition: exitTransition },
 };
-
 const frontendPageConfig: AnimationPresenceSectionProps = {
   initial: { x: 100, opacity: 0, transition: initialTransition },
   animate: { x: 0, opacity: 1, transition: animateTransition },
@@ -39,9 +39,21 @@ const MainPage = () => {
       case "info":
         return <Info key={"info"} {...infoConfig} />;
       case "frontend":
-        return <Frontend key={"frontend"} {...frontendPageConfig} />;
+        return (
+          <PortfolioPage
+            projects={frontendProjects}
+            key={"frontend"}
+            {...frontendPageConfig}
+          />
+        );
       case "backend":
-        return <Backend key={"backend"} {...backendPageConfig} />;
+        return (
+          <PortfolioPage
+            projects={backendProjects}
+            key={"backend"}
+            {...backendPageConfig}
+          />
+        );
       default:
         return <Info key={"info"} {...infoConfig} />;
     }

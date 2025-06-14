@@ -1,3 +1,3 @@
-declare interface IComponentWithClassName {
+interface IComponentWithClassName {
   className?: string;
 }

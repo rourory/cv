@@ -1,12 +1,6 @@
 import React from "react";
 import Divider from "../Divider";
 
-interface IBlockTitle {
-  icon?: string;
-  title: string;
-  rightSideIcon?: string;
-}
-
 const BlockTitle: React.FC<IBlockTitle> = ({ icon, title, rightSideIcon }) => {
   return (
     <>

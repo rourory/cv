@@ -2,11 +2,6 @@ import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
 import React from "react";
 import { cn } from "../../../lib/utils";
 
-interface IGoToButton extends React.PropsWithChildren, IComponentWithClassName {
-  direction: "left" | "right" | "up" | "down" | "none";
-  onClick?: () => void;
-}
-
 const GoToButton: React.FC<IGoToButton> = ({
   className,
   children,

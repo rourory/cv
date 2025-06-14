@@ -3,23 +3,6 @@ import { cn } from "../../../lib/utils";
 import KnowledgeLevelBadge from "../../atoms/Badge";
 import BlockTitle from "../../atoms/BlockTitle";
 
-export interface Technology {
-  icon?: string;
-  technology: string;
-  link?: string;
-}
-
-export interface InfoBlockData {
-  technology: Technology;
-  level: "beginner" | "intermediate" | "advanced";
-}
-
-interface IInfoBlock extends React.PropsWithChildren, IComponentWithClassName {
-  icon?: string;
-  title: string;
-  techlologies?: Array<InfoBlockData>;
-}
-
 const InfoBlock: React.FC<IInfoBlock> = ({
   className,
   children,

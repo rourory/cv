@@ -1,12 +1,6 @@
 import React from "react";
 import { cn } from "../../../lib/utils";
 
-export type KnowledgeLevel = "beginner" | "intermediate" | "advanced";
-
-interface IKnowledgeLevelBagde extends IComponentWithClassName {
-  level: KnowledgeLevel;
-}
-
 const KnowledgeLevelBadge: React.FC<IKnowledgeLevelBagde> = ({
   className,
   level,

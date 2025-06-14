@@ -1,18 +1,8 @@
 import React from "react";
-import { Technology } from "../InfoBlock";
 import BlockTitle from "../../atoms/BlockTitle";
 import { motion } from "framer-motion";
 import Divider from "../../atoms/Divider";
-interface IPortfolioProjectBlock
-  extends React.PropsWithChildren,
-    AnimationPresenceSectionProps {
-  icon?: string;
-  title: string;
-  language: "JavaScript" | "Java" | "C#";
-  technologies?: Array<Technology>;
-  order: number;
-  projectLink: string;
-}
+import { cn } from "../../../lib/utils";
 
 const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
   children,
@@ -74,12 +64,17 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
           </div>
         </div>
         <a
-          className="cursor-pointer flex justify-around items-center font-bold text-md border rounded-md p-2 transition-all duration-200 hover:bg-slate-700 mx-2 w-[140px]"
+          className={cn(
+            "cursor-pointer flex justify-around items-center font-bold text-md border rounded-md p-2 transition-all duration-200 hover:bg-slate-700 mx-2 w-[140px]",
+            projectLink
+              ? ""
+              : "pointer-events-none cursor-not-allowed opacity-30"
+          )}
           target="_blank"
           rel="noopener noreferrer"
           href={projectLink}
         >
-          Try out
+          {projectLink ? "View Project" : "Private"}
         </a>
       </div>
     </motion.div>
