@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import BlockTitle from "../../atoms/BlockTitle";
 import { motion } from "framer-motion";
 import Divider from "../../atoms/Divider";
@@ -46,6 +46,7 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
         <BlockTitle title={title} icon={icon} rightSideIcon={rightSideIcon} />
       </div>
       <p className="mb-4">{children}</p>
+
       <Divider />
       <div className="w-full flex justify-between mt-1">
         <div className="flex items-center ">

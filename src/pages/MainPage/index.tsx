@@ -7,8 +7,10 @@ import { AnimatePresence } from "framer-motion";
 import { useInfoPageStore } from "../../store/info-page-store";
 import React from "react";
 import PortfolioPage from "../../components/organisms/PortfolioPage";
-import { frontendProjects } from "../../db/frontend-projects";
 import { backendProjects } from "../../db/backend-projects";
+//@ts-ignore
+import { frontendProjects } from "../../db/frontend-projects";
+import FloatingButton from "../../components/molecules/FloatingButton";
 
 const initialTransition = { type: "spring", duration: 1, delay: 0 };
 const animateTransition = { type: "spring", duration: 1, delay: 1 };
@@ -65,6 +67,7 @@ const MainPage = () => {
         <div className="flex flex-col">
           <Header />
           <AnimatePresence>{SelectedBlock}</AnimatePresence>
+          <FloatingButton />
           <Footer />
         </div>
       </div>
