@@ -1,18 +1,25 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import MainPage from "./pages/MainPage";
-import { useState } from "react";
+import React from "react";
 
-import enMessages from "./locales/en/translation.json";
-import ruMessages from "./locales/ru/translation.json";
+import enMessages from "./locales/en-US/translation.json";
+import ruMessages from "./locales/ru-RU/translation.json";
 import { IntlProvider } from "react-intl";
 import { useLocaleStore } from "./store/locale-store";
+import getUserLocale from "get-user-locale";
 
 const messages = {
-  en: enMessages,
-  ru: ruMessages,
+  "en-US": enMessages,
+  "ru-RU": ruMessages,
+  "de-DE": ruMessages,
 };
 function App() {
-  const { locale } = useLocaleStore();
+  const { locale, setLocale } = useLocaleStore();
+
+  React.useEffect(() => {
+    const locale = getUserLocale({ fallbackLocale: "en-US" });
+    setLocale(locale as AppLocale);
+  }, []);
 
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>

@@ -1,4 +1,4 @@
-type AppLocale = "ru" | "en";
+type AppLocale = "ru-RU" | "en-US" | "de-DE";
 
 interface LocaleStore {
   locale: AppLocale;

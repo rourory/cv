@@ -1,6 +1,7 @@
 import Divider from "../../atoms/Divider";
 import SocialMediaLink from "../../atoms/SocialMediaLink";
 import { motion } from "framer-motion";
+import FloatingButton from "../../molecules/FloatingButton";
 
 const socialMedia: Array<{
   icon: string;
@@ -57,6 +58,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
+      <FloatingButton />
     </motion.footer>
   );
 };

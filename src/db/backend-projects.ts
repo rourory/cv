@@ -46,7 +46,6 @@ const telephonyRemoteTerminal: PortfolioProject = {
     technologies.flaUI,
     technologies.nAudio,
     technologies.fleck,
-    technologies.nAudio,
   ],
   description: "projects.backend.telephonyRemoteTerminal",
 };
