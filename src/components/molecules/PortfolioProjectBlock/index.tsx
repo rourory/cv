@@ -1,8 +1,9 @@
-import React, { Suspense } from "react";
+import React from "react";
 import BlockTitle from "../../atoms/BlockTitle";
 import { motion } from "framer-motion";
 import Divider from "../../atoms/Divider";
 import { cn } from "../../../lib/utils";
+import { FormattedMessage } from "react-intl";
 
 const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
   children,
@@ -50,7 +51,6 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
         />
       </div>
       <p className="mb-4">{children}</p>
-
       <Divider />
       <div className="w-full flex justify-between mt-1">
         <div className="flex items-center ">
@@ -79,7 +79,9 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
           rel="noopener noreferrer"
           href={projectLink}
         >
-          {projectLink ? "View Project" : "Private"}
+          <FormattedMessage
+            id={projectLink ? "buttons.viewproject" : "buttons.privateproject"}
+          />
         </a>
       </div>
     </motion.div>

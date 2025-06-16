@@ -3,6 +3,8 @@
   "buttons.goback": "Go back",
   "buttons.frontend": "Frontend",
   "buttons.backend": "Backend",
+  "buttons.viewproject": "View Project",
+  "buttons.privateproject": "Private",
   "info.js.header": "JavaScript",
   "info.java.header": "Java",
   "info.additional.header": "Extra Skills",

@@ -3,6 +3,8 @@
   "buttons.goback": "Назад",
   "buttons.frontend": "Frontend",
   "buttons.backend": "Backend",
+  "buttons.viewproject": "К проекту",
+  "buttons.privateproject": "Закрытый",
   "info.js.header": "JavaScript",
   "info.java.header": "Java",
   "info.additional.header": "Дополнительные навыки",
