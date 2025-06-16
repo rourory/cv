@@ -5,6 +5,7 @@ import { FormattedMessage } from "react-intl";
 const BlockTitle: React.FC<IBlockTitle> = ({
   icon,
   localizedTitleId,
+  title,
   rightSideIcon,
 }) => {
   return (
@@ -16,12 +17,12 @@ const BlockTitle: React.FC<IBlockTitle> = ({
             width={30}
             height={30}
             alt={localizedTitleId}
-            className="object-contain w-[30px] h-[30px] ml-2 mr-4"
+            className="object-contain w-[25px] h-[25px] sm:w-[30px] sm:h-[30px] ml-2 mr-4"
           />
         )}
         <div className="flex items-center justify-between w-full">
-          <p className="text-2xl font-bold">
-            <FormattedMessage id={localizedTitleId} />
+          <p className="text-base sm:text-xl lg:text-2xl font-bold">
+            {title ? title : <FormattedMessage id={localizedTitleId} />}
           </p>
           {rightSideIcon && (
             <img
@@ -29,7 +30,7 @@ const BlockTitle: React.FC<IBlockTitle> = ({
               width={30}
               height={30}
               alt={localizedTitleId}
-              className="object-contain w-[30px] h-[30px] ml-2 mr-4"
+              className="object-contain w-[25px] h-[25px] sm:w-[30px] sm:h-[30px] ml-2 mr-4"
             />
           )}
         </div>

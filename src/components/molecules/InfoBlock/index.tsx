@@ -14,17 +14,17 @@ const InfoBlock: React.FC<IInfoBlock> = ({
   return (
     <div
       className={cn(
-        "flex flex-col relative min-w-[300px] max-w-[750px] col-span-1 px-3 sm:px-10 pb-10 pt-5 rounded-3xl shadow-[1px_0px_15px_rgba(255,255,255,0.1)] transition-all duration-200 pointer-events-auto bg-slate-800 hover:scale-[103%]",
+        "flex flex-col relative min-w-[250px] max-w-[750px] col-span-1 px-3 sm:px-10 pb-10 pt-5 rounded-3xl shadow-[1px_0px_15px_rgba(255,255,255,0.1)] transition-all duration-200 pointer-events-auto bg-slate-800 hover:scale-[103%]",
         className
       )}
     >
       <BlockTitle icon={icon} localizedTitleId={localizedTitleId} />
-      <p>{children}</p>
+      <p className="text-sm sm:text-base lg:text-lg">{children}</p>
       {data && (
         <table className="mt-5">
           <thead>
             <tr>
-              <th className="text-center p-[5px]">
+              <th className="text-center p-[5px] text-sm md:text-lg">
                 <FormattedMessage id={"table.header.technology"} />
               </th>
               <th className="text-center p-[5px]">
@@ -36,7 +36,7 @@ const InfoBlock: React.FC<IInfoBlock> = ({
             {data.map((item) => (
               <tr
                 key={item.technology.technology}
-                className="border-b border-[#c4c7ca] border-opacity-30"
+                className="border-b border-[#c4c7ca] border-opacity-30 text-sm sm:text-base lg:text-lg"
               >
                 <th className="text-center p-[5px] pl-[15px] flex">
                   {item.technology.icon ? (

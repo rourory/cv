@@ -20,7 +20,7 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
       initial={initial}
       animate={animate}
       exit={exit}
-      className="relative z-20 h-[calc(100vh-280px)] min-w-[375px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10"
+      className="relative z-20 h-[calc(100vh-210px)] sm:h-[calc(100vh-230px)] min-w-[320px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10"
     >
       <Scrollable />
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-14 z-30 ">

@@ -61,7 +61,7 @@ const MainPage = () => {
     }
   }, [selectedBlock]);
   return (
-    <div className="h-[100vh] w-[100vw] min-w-[375px]" onClick={click}>
+    <div className="h-[100vh] w-[100vw] min-w-[320px]" onClick={click}>
       <div className="relative h-full w-full">
         <Main connectors={connectors} />
         <div className="flex flex-col">

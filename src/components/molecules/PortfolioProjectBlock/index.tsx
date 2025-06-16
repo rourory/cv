@@ -7,6 +7,7 @@ import { FormattedMessage } from "react-intl";
 
 const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
   children,
+  localizedTitleId,
   title,
   language,
   technologies,
@@ -45,18 +46,19 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
     >
       <div>
         <BlockTitle
-          localizedTitleId={title}
+          localizedTitleId={localizedTitleId}
+          title={title}
           icon={icon}
           rightSideIcon={rightSideIcon}
         />
       </div>
-      <p className="mb-4">{children}</p>
+      <p className="mb-4 text-sm sm:text-base lg:text-lg">{children}</p>
       <Divider />
       <div className="w-full flex justify-between mt-1">
         <div className="flex items-center ">
           <div className="border rounded-md p-2 gap-2 max-h-[60px] overflow-scroll grid grid-cols-4 sm:grid-cols-9 lg:grid-cols-12 xl:grid-cols-[20]">
             {technologies?.map((item) => (
-              <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <a href={item.link} target="_blank" rel="noopener noreferrer" key={item.technology}>
                 <img
                   src={`${process.env.PUBLIC_URL}/${item.icon}`}
                   alt={item.technology}

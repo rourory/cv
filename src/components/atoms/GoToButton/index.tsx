@@ -48,12 +48,12 @@ const GoToButton: React.FC<IGoToButton> = ({
       <button
         onClick={onClick}
         className={cn(
-          "flex items-center justify-between gap-2 text-xl text-app border rounded-md p-2 transition-all duration-200 hover:translate-x-4 hover:bg-slate-800 mx-2 w-[140px]",
+          "flex items-center justify-between gap-2 text-xl text-app border rounded-md p-2 transition-all duration-200 hover:translate-x-4 hover:bg-slate-800 mx-2 w-[110px] sm:w-[120px] md:w-[140px]",
           translate
         )}
       >
         {direction === "left" && <Arrow />}
-        <p className="text-md md:text-xl lg:text-2xl">{children}</p>
+        <p className="text-base md:text-xl lg:text-2xl">{children}</p>
         {direction === "right" && <Arrow />}
       </button>
     </div>
