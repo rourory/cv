@@ -14,3 +14,42 @@
 .text-app {
   color: #c4c7ca
 }
+
+
+
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* — Firefox */
+html, body {
+  scrollbar-width: thin;                     /* узкая полоса */
+  scrollbar-color: #888 transparent;         /* цвет «ползунка» и фона */
+}
+
+/* — WebKit‑броузеры: Chrome, Safari, Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 4px;      /* толщина вертикальной полосы */
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent;  /* фоновая дорожка */
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: #888;   /* цвет «ползунка» */
+  border-radius: 4px;       /* скруглённые углы */
+  border: 2px solid transparent; /* отступы, чтобы не прилегал вплотную */
+}
+
+
+html::-webkit-scrollbar:horizontal,
+body::-webkit-scrollbar:horizontal {
+  height: 0;
+}
+
+
