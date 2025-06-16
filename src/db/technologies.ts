@@ -180,7 +180,7 @@ export const blender: Technology = {
 };
 export const docker: Technology = {
   technology: "Docker",
-  icon: "icons/docker.svg",
+  icon: "icons/docker.png",
   link: "https://docs.docker.com/",
 };
 export const mlWorkflow: Technology = {
@@ -209,16 +209,16 @@ export const nAudio: Technology = {
 
 export const russian: Technology = {
   technology: "Russian",
-  icon: "icons/ru.webp",
+  icon: "icons/ru-RU.webp",
   link: "", // нет документации
 };
 export const english: Technology = {
   technology: "English",
-  icon: "icons/en.webp",
+  icon: "icons/en-US.webp",
   link: "", // нет документации
 };
 export const german: Technology = {
   technology: "German",
-  icon: "icons/ge.webp",
+  icon: "icons/de-DE.webp",
   link: "", // нет документации
 };

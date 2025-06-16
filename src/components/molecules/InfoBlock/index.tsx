@@ -2,12 +2,13 @@ import React from "react";
 import { cn } from "../../../lib/utils";
 import KnowledgeLevelBadge from "../../atoms/Badge";
 import BlockTitle from "../../atoms/BlockTitle";
+import { FormattedMessage } from "react-intl";
 
 const InfoBlock: React.FC<IInfoBlock> = ({
   className,
   children,
   icon,
-  title,
+  localizedTitleId,
   techlologies: data,
 }) => {
   return (
@@ -17,14 +18,18 @@ const InfoBlock: React.FC<IInfoBlock> = ({
         className
       )}
     >
-      <BlockTitle icon={icon} title={title} />
+      <BlockTitle icon={icon} localizedTitleId={localizedTitleId} />
       <p>{children}</p>
       {data && (
         <table className="mt-5">
           <thead>
             <tr>
-              <th className="text-center p-[5px]">Technology</th>
-              <th className="text-center p-[5px]">Knowledge</th>
+              <th className="text-center p-[5px]">
+                <FormattedMessage id={"table.header.technology"} />
+              </th>
+              <th className="text-center p-[5px]">
+                <FormattedMessage id={"table.header.knowledge"} />
+              </th>
             </tr>
           </thead>
           <tbody>

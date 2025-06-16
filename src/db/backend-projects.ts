@@ -3,7 +3,7 @@ import * as technologies from "./technologies";
 const telephonyDemoApi: PortfolioProject = {
   title: "Telephony Demo API",
   language: "JavaScript",
-  projectLink: "https://rourory.github.io/telephony-demo",
+  projectLink: "https://telephony-demo-api.vercel.app/",
   icon: "apps/telephony.svg",
   technologies: [
     technologies.typescript,

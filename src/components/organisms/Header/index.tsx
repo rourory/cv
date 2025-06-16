@@ -2,9 +2,10 @@ import Typewriter from "typewriter-effect";
 import GoToButton from "../../atoms/GoToButton";
 import { motion } from "framer-motion";
 import { useInfoPageStore } from "../../../store/info-page-store";
+import { FormattedMessage } from "react-intl";
 
-const firstPartText = "Hello! I'm a web";
-const secondPartText = "full stack web-developer.";
+const firstPartText = "Hi! Welcome to my poftfolio.";
+const secondPartText = "CV and portfolio.";
 
 const Header = () => {
   const { selectedBlock, setSelectedBlock } = useInfoPageStore();
@@ -23,7 +24,7 @@ const Header = () => {
               .pauseFor(3000)
               .typeString(firstPartText)
               .pauseFor(500)
-              .deleteChars(3)
+              .deleteChars(10)
               .typeString(secondPartText)
               .start();
           }}
@@ -41,7 +42,13 @@ const Header = () => {
           }}
           direction="left"
         >
-          {selectedBlock === "backend" ? "Go back" : "Fontend"}
+          <FormattedMessage
+            id={
+              selectedBlock === "backend"
+                ? "buttons.goback"
+                : "buttons.frontend"
+            }
+          />
         </GoToButton>
         <div className="hidden sm:block text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl text-app text-center content-center flex-grow mx-1 sm:mx-3">
           <Typewriter
@@ -50,7 +57,7 @@ const Header = () => {
                 .pauseFor(3000)
                 .typeString(firstPartText)
                 .pauseFor(500)
-                .deleteChars(3)
+                .deleteChars(10)
                 .typeString(secondPartText)
                 .start();
             }}
@@ -67,7 +74,13 @@ const Header = () => {
           }}
           direction="right"
         >
-          {selectedBlock === "frontend" ? "Go back" : "Backend"}
+          <FormattedMessage
+            id={
+              selectedBlock === "frontend"
+                ? "buttons.goback"
+                : "buttons.backend"
+            }
+          />
         </GoToButton>
       </div>
     </motion.header>

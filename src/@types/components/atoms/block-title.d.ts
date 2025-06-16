@@ -1,5 +1,5 @@
 interface IBlockTitle {
   icon?: string;
-  title: string;
+  localizedTitleId: string;
   rightSideIcon?: string;
 }

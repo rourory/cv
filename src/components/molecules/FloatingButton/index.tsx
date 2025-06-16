@@ -5,6 +5,7 @@ const FloatingButton = () => {
 
   return (
     <img
+      aria-label="Change locale"
       onClick={() => setLocale(locale === "ru-RU" ? "en-US" : "ru-RU")}
       src={`${process.env.PUBLIC_URL}/icons/${locale}.webp`}
       alt={locale}

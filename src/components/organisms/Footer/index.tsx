@@ -2,6 +2,7 @@ import Divider from "../../atoms/Divider";
 import SocialMediaLink from "../../atoms/SocialMediaLink";
 import { motion } from "framer-motion";
 import FloatingButton from "../../molecules/FloatingButton";
+import { FormattedMessage } from "react-intl";
 
 const socialMedia: Array<{
   icon: string;
@@ -50,7 +51,9 @@ const Footer = () => {
       className="absolute left-0 bottom-0 h-[130px] flex flex-col sm:flex-row justify-center items-center z-50 w-full backdrop-blur shadow-[1px_-5px_10px_rgba(255,255,255,0.1)]"
     >
       <div className="relative text-app w-full left-0 z-50 p-1">
-        <p className="text-3xl text-center">Contact me:</p>
+        <p className="text-3xl text-center">
+          <FormattedMessage id={"footer.header"} />
+        </p>
         <Divider />
         <div className="flex justify-evenly mt-4">
           {socialMedia.map((item) => (

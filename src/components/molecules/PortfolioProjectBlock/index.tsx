@@ -43,7 +43,11 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
       className="z-20 bg-slate-800 rounded-lg px-3 sm:px-10 pb-5 pt-5 pointer-events-auto shadow-[1px_0px_15px_rgba(255,255,255,0.1) max-w-[900px] mx-auto"
     >
       <div>
-        <BlockTitle title={title} icon={icon} rightSideIcon={rightSideIcon} />
+        <BlockTitle
+          localizedTitleId={title}
+          icon={icon}
+          rightSideIcon={rightSideIcon}
+        />
       </div>
       <p className="mb-4">{children}</p>
 

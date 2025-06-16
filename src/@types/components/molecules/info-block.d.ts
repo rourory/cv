@@ -11,6 +11,6 @@ interface InfoBlockData {
 
 interface IInfoBlock extends React.PropsWithChildren, IComponentWithClassName {
   icon?: string;
-  title: string;
+  localizedTitleId: string;
   techlologies?: Array<InfoBlockData>;
 }
