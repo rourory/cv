@@ -231,12 +231,12 @@ export const kubernetes: Technology = {
 
 export const argoCd: Technology = {
   technology: "Argo CD",
-  icon: "icons/argocd.png",
+  icon: "icons/argo.png",
   link: "https://argo-cd.readthedocs.io/en/stable/a",
 };
 
-export const helm: Technology= {
+export const helm: Technology = {
   technology: "Helm",
   icon: "icons/helm.png",
   link: "https://helm.sh/docs/",
-}
+};
