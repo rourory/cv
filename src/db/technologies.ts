@@ -222,3 +222,21 @@ export const german: Technology = {
   icon: "icons/de-DE.webp",
   link: "", // нет документации
 };
+
+export const kubernetes: Technology = {
+  technology: "Kubernetes",
+  icon: "icons/kubernetes.svg",
+  link: "https://kubernetes.io/docs/",
+};
+
+export const argoCd: Technology = {
+  technology: "Argo CD",
+  icon: "icons/argocd.png",
+  link: "https://argo-cd.readthedocs.io/en/stable/a",
+};
+
+export const helm: Technology= {
+  technology: "Helm",
+  icon: "icons/helm.png",
+  link: "https://helm.sh/docs/",
+}

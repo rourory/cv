@@ -41,9 +41,12 @@ export const additionalSkills: Array<InfoBlockData> = [
   { technology: technologies.vs2022, level: "intermediate" },
   { technology: technologies.git, level: "intermediate" },
   { technology: technologies.postman, level: "intermediate" },
+  { technology: technologies.docker, level: "intermediate" },
+  { technology: technologies.kubernetes, level: "intermediate" },
   { technology: technologies.blender, level: "beginner" },
-  { technology: technologies.docker, level: "beginner" },
   { technology: technologies.mlWorkflow, level: "beginner" },
+  { technology: technologies.helm, level: "beginner" },
+  { technology: technologies.argoCd, level: "beginner" },
 ];
 
 export const languagesStack: Array<InfoBlockData> = [
