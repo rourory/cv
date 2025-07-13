@@ -17,7 +17,7 @@ const printiqueApp: PortfolioProject = {
     technologies.postgresql,
     technologies.prisma,
   ],
-  description: "projects.frontend.printiqueApp",
+  description: "projectsFrontendPrintiqueApp",
 };
 
 const telephonyApp: PortfolioProject = {
@@ -34,7 +34,7 @@ const telephonyApp: PortfolioProject = {
     technologies.materialUI,
     technologies.vscode,
   ],
-  description: "projects.frontend.telephonyApp",
+  description: "projectsFrontendTelephonyApp",
 };
 
 export const frontendProjects: Array<PortfolioProject> = [

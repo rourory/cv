@@ -2,12 +2,13 @@ import Typewriter from "typewriter-effect";
 import GoToButton from "../../atoms/GoToButton";
 import { motion } from "framer-motion";
 import { useInfoPageStore } from "../../../store/info-page-store";
-import { FormattedMessage } from "react-intl";
+import { useI18nContext } from "../../../i18n/i18n-react";
 
 const firstPartText = "Hi! Welcome to my CV!";
 
 const Header = () => {
   const { selectedBlock, setSelectedBlock } = useInfoPageStore();
+  const { LL } = useI18nContext();
 
   return (
     <motion.header
@@ -20,10 +21,7 @@ const Header = () => {
       <div className="block content-center sm:hidden text-xl text-[#c4c7ca] text-center flex-grow mx-1">
         <Typewriter
           onInit={(typewriter) => {
-            typewriter
-              .pauseFor(3000)
-              .typeString(firstPartText)
-              .start();
+            typewriter.pauseFor(3000).typeString(firstPartText).start();
           }}
         />
       </div>
@@ -39,22 +37,15 @@ const Header = () => {
           }}
           direction="left"
         >
-          <FormattedMessage
-            id={
-              selectedBlock === "backend"
-                ? "buttons.goback"
-                : "buttons.frontend"
-            }
-          />
+          {selectedBlock === "backend"
+            ? LL.buttonsGoBack()
+            : LL.buttonsFrontend()}
         </GoToButton>
         {/* Desktop */}
         <div className="hidden sm:block text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl text-app text-center content-center flex-grow mx-1 sm:mx-3">
           <Typewriter
             onInit={(typewriter) => {
-              typewriter
-                .pauseFor(3000)
-                .typeString(firstPartText)
-                .start();
+              typewriter.pauseFor(3000).typeString(firstPartText).start();
             }}
           />
         </div>
@@ -69,13 +60,9 @@ const Header = () => {
           }}
           direction="right"
         >
-          <FormattedMessage
-            id={
-              selectedBlock === "frontend"
-                ? "buttons.goback"
-                : "buttons.backend"
-            }
-          />
+          {selectedBlock === "frontend"
+            ? LL.buttonsGoBack()
+            : LL.buttonsBackend()}
         </GoToButton>
       </div>
     </motion.header>

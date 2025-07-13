@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "../../../lib/utils";
 import KnowledgeLevelBadge from "../../atoms/Badge";
 import BlockTitle from "../../atoms/BlockTitle";
-import { FormattedMessage } from "react-intl";
+import { useI18nContext } from "../../../i18n/i18n-react";
 
 const InfoBlock: React.FC<IInfoBlock> = ({
   className,
@@ -11,6 +11,8 @@ const InfoBlock: React.FC<IInfoBlock> = ({
   localizedTitleId,
   techlologies: data,
 }) => {
+  const { LL } = useI18nContext();
+
   return (
     <div
       className={cn(
@@ -18,17 +20,20 @@ const InfoBlock: React.FC<IInfoBlock> = ({
         className
       )}
     >
-      <BlockTitle icon={icon} localizedTitleId={localizedTitleId} />
+      <BlockTitle
+        icon={icon}
+        title={LL[localizedTitleId as keyof typeof LL]()}
+      />
       <p className="text-sm sm:text-base lg:text-lg">{children}</p>
       {data && (
         <table className="mt-5">
           <thead>
             <tr>
               <th className="text-center p-[5px] text-sm md:text-lg">
-                <FormattedMessage id={"table.header.technology"} />
+                {LL.tableHeaderTechnology()}
               </th>
               <th className="text-center p-[5px]">
-                <FormattedMessage id={"table.header.knowledge"} />
+                {LL.tableHeaderKnowledge()}
               </th>
             </tr>
           </thead>

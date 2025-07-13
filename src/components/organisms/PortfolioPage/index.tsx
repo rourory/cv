@@ -1,7 +1,7 @@
 import React from "react";
 import Scrollable from "../../atoms/Scrollable";
 import PortfolioProjectBlock from "../../molecules/PortfolioProjectBlock";
-import { FormattedMessage } from "react-intl";
+import { useI18nContext } from "../../../i18n/i18n-react";
 
 const PortfolioPage: React.FC<IPortfolioSection> = ({
   projects,
@@ -9,6 +9,8 @@ const PortfolioPage: React.FC<IPortfolioSection> = ({
   initial,
   exit,
 }) => {
+  const { LL } = useI18nContext();
+
   return (
     <section className="relative flex flex-col z-20 h-[calc(100vh-230px)] min-w-[320px] w-[100vw] text-app pointer-events-none overflow-scroll p-5 md:p-10 gap-5">
       <Scrollable />
@@ -25,7 +27,7 @@ const PortfolioPage: React.FC<IPortfolioSection> = ({
           icon={project.icon}
           projectLink={project.projectLink}
         >
-          <FormattedMessage id={project.description} />
+          {project.description ? LL[project.description as keyof typeof LL]() : "No Content"}
         </PortfolioProjectBlock>
       ))}
     </section>

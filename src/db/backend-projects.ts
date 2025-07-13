@@ -13,7 +13,7 @@ const telephonyDemoApi: PortfolioProject = {
     technologies.nodeJs,
     technologies.vscode,
   ],
-  description: "projects.backend.telephonyDemoApi",
+  description: "projectsBackendTelephonyDemoApi",
 };
 
 const telephonyServer: PortfolioProject = {
@@ -33,7 +33,7 @@ const telephonyServer: PortfolioProject = {
     technologies.liquibase,
     technologies.intellijidea,
   ],
-  description: "projects.backend.telephonyServer",
+  description: "projectsBackendTelephonyServer",
 };
 
 const telephonyRemoteTerminal: PortfolioProject = {
@@ -47,7 +47,7 @@ const telephonyRemoteTerminal: PortfolioProject = {
     technologies.nAudio,
     technologies.fleck,
   ],
-  description: "projects.backend.telephonyRemoteTerminal",
+  description: "projectsBackendTelephonyRemoteTerminal",
 };
 
 export const backendProjects: Array<PortfolioProject> = [

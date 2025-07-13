@@ -3,7 +3,7 @@ import BlockTitle from "../../atoms/BlockTitle";
 import { motion } from "framer-motion";
 import Divider from "../../atoms/Divider";
 import { cn } from "../../../lib/utils";
-import { FormattedMessage } from "react-intl";
+import { useI18nContext } from "../../../i18n/i18n-react";
 
 const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
   children,
@@ -18,6 +18,8 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
   icon,
   projectLink,
 }) => {
+  const { LL } = useI18nContext();
+
   const rightSideIcon = React.useMemo(() => {
     switch (language) {
       case "JavaScript":
@@ -58,7 +60,12 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
         <div className="flex items-center ">
           <div className="border rounded-md p-2 gap-2 max-h-[60px] overflow-scroll grid grid-cols-4 sm:grid-cols-9 lg:grid-cols-12 xl:grid-cols-[20]">
             {technologies?.map((item) => (
-              <a href={item.link} target="_blank" rel="noopener noreferrer" key={item.technology}>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={item.technology}
+              >
                 <img
                   src={`${process.env.PUBLIC_URL}/${item.icon}`}
                   alt={item.technology}
@@ -81,9 +88,7 @@ const PortfolioProjectBlock: React.FC<IPortfolioProjectBlock> = ({
           rel="noopener noreferrer"
           href={projectLink}
         >
-          <FormattedMessage
-            id={projectLink ? "buttons.viewproject" : "buttons.privateproject"}
-          />
+          {projectLink ? LL.buttonsViewProject() : LL.buttonsPrivateProject()}
         </a>
       </div>
     </motion.div>

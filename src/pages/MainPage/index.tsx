@@ -8,7 +8,6 @@ import { useInfoPageStore } from "../../store/info-page-store";
 import React from "react";
 import PortfolioPage from "../../components/organisms/PortfolioPage";
 import { backendProjects } from "../../db/backend-projects";
-//@ts-ignore
 import { frontendProjects } from "../../db/frontend-projects";
 
 

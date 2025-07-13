@@ -1,10 +1,10 @@
-import { FormattedMessage } from "react-intl";
 import {
   javaScriptStack,
   javaStack,
   additionalSkills,
   languagesStack,
 } from "../../../db/info";
+import { useI18nContext } from "../../../i18n/i18n-react";
 import Scrollable from "../../atoms/Scrollable";
 import InfoBlock from "../../molecules/InfoBlock";
 import { motion } from "framer-motion";
@@ -14,6 +14,8 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
   animate,
   exit,
 }) => {
+  const { LL } = useI18nContext();
+
   return (
     <motion.section
       key={"info"}
@@ -26,35 +28,35 @@ const Info: React.FC<AnimationPresenceSectionProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-14 z-30 ">
         <InfoBlock
           icon="icons/javascript.svg"
-          localizedTitleId="info.js.header"
+          localizedTitleId="infoJsHeader"
           techlologies={javaScriptStack}
           className="z-30"
         >
-          <FormattedMessage id={"info.js.content"} />
+          {LL.infoJsContent()}
         </InfoBlock>
         <InfoBlock
           icon="icons/java.svg"
-          localizedTitleId="info.java.header"
+          localizedTitleId="infoJavaHeader"
           techlologies={javaStack}
           className="z-30"
         >
-          <FormattedMessage id={"info.java.content"} />
+          {LL.infoJavaContent()}
         </InfoBlock>
         <InfoBlock
           icon="icons/skills.svg"
-          localizedTitleId="info.additional.header"
+          localizedTitleId="infoAdditionalHeader"
           techlologies={additionalSkills}
           className="z-30"
         >
-          <FormattedMessage id={"info.additional.content"} />
+          {LL.infoAdditionalContent()}
         </InfoBlock>
         <InfoBlock
           icon="icons/languages.png"
-          localizedTitleId="info.languages.header"
+          localizedTitleId="infoLanguagesHeader"
           techlologies={languagesStack}
           className="z-30"
         >
-          <FormattedMessage id={"info.languages.content"} />
+          {LL.infoLanguagesContent()}
         </InfoBlock>
       </div>
     </motion.section>

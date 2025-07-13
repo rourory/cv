@@ -2,7 +2,7 @@ import Divider from "../../atoms/Divider";
 import SocialMediaLink from "../../atoms/SocialMediaLink";
 import { motion } from "framer-motion";
 import FloatingButton from "../../molecules/FloatingButton";
-import { FormattedMessage } from "react-intl";
+import { useI18nContext } from "../../../i18n/i18n-react";
 
 const socialMedia: Array<{
   icon: string;
@@ -43,6 +43,8 @@ const socialMedia: Array<{
 ];
 
 const Footer = () => {
+  const { LL } = useI18nContext();
+
   return (
     <motion.footer
       initial={{ opacity: 0, y: 120 }}
@@ -51,9 +53,7 @@ const Footer = () => {
       className="absolute left-0 bottom-0 h-[110px] sm:h-[130px] flex flex-col sm:flex-row justify-center items-center z-50 w-full backdrop-blur shadow-[1px_-5px_10px_rgba(255,255,255,0.1)]"
     >
       <div className="relative text-app w-full left-0 z-50 p-1">
-        <p className="text-2xl md:text-3xl text-center">
-          <FormattedMessage id={"footer.header"} />
-        </p>
+        <p className="text-2xl md:text-3xl text-center">{LL.footerHeader()}</p>
         <Divider />
         <div className="flex justify-evenly mt-2 sm:mt-4 gap-1">
           {socialMedia.map((item) => (

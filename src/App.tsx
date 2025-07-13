@@ -1,39 +1,34 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import MainPage from "./pages/MainPage";
-import React from "react";
+import React, { useState } from "react";
 
-import { ruRU as ruMessages } from "./locales/ru-RU/translations";
-import { enUS as enMessages } from "./locales/en-US/translations";
+import TypesafeI18n from "./i18n/i18n-react";
+import { localStorageDetector } from "typesafe-i18n/detectors";
+import { loadLocaleAsync } from "./i18n/i18n-util.async";
+import { detectLocale } from "./i18n/i18n-util";
 
-import { IntlProvider } from "react-intl";
-import { useLocaleStore } from "./store/locale-store";
-import getUserLocale from "get-user-locale";
+const detectedLocale = detectLocale(localStorageDetector);
 
-const messages = {
-  "en-US": enMessages,
-  "ru-RU": ruMessages,
-  "de-DE": ruMessages,
-};
 function App() {
-  const { locale, setLocale } = useLocaleStore();
+  const [wasLoaded, setWasLoaded] = useState(false);
 
   React.useEffect(() => {
-    const locale = getUserLocale({ fallbackLocale: "en-US" });
-    setLocale(locale as AppLocale);
+    console.log(detectedLocale);
+    loadLocaleAsync(detectedLocale).then((v) => {
+      setWasLoaded(true);
+    });
   }, []);
 
+  if (!wasLoaded) return null;
+
   return (
-    <IntlProvider
-      locale={locale}
-      messages={messages[locale]}
-      defaultLocale="en-US"
-    >
+    <TypesafeI18n locale={detectedLocale}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<MainPage />} />
         </Routes>
       </BrowserRouter>
-    </IntlProvider>
+    </TypesafeI18n>
   );
 }
 

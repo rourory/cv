@@ -209,18 +209,18 @@ export const nAudio: Technology = {
 
 export const russian: Technology = {
   technology: "Russian",
-  icon: "icons/ru-RU.webp",
-  link: "", // нет документации
+  icon: "icons/ru.webp",
+  link: "",
 };
 export const english: Technology = {
   technology: "English",
-  icon: "icons/en-US.webp",
-  link: "", // нет документации
+  icon: "icons/en.webp",
+  link: "",
 };
 export const german: Technology = {
   technology: "German",
-  icon: "icons/de-DE.webp",
-  link: "", // нет документации
+  icon: "icons/de.webp",
+  link: "",
 };
 
 export const kubernetes: Technology = {
