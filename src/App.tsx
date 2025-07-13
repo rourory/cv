@@ -22,8 +22,6 @@ function App() {
     setLocale(locale as AppLocale);
   }, []);
 
-  console.log(messages);
-
   return (
     <IntlProvider
       locale={locale}
