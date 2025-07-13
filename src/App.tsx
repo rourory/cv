@@ -27,7 +27,11 @@ function App() {
   }, []);
 
   return (
-    <IntlProvider locale={locale} messages={messages[locale]}>
+    <IntlProvider
+      locale={locale}
+      messages={messages[locale]}
+      defaultLocale="en-US"
+    >
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<MainPage />} />
