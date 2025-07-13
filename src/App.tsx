@@ -2,6 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import MainPage from "./pages/MainPage";
 import React from "react";
 
+import "@formatjs/intl-pluralrules/polyfill";
+import "@formatjs/intl-pluralrules/locale-data/ru";
+import "@formatjs/intl-relativetimeformat/polyfill";
+import "@formatjs/intl-relativetimeformat/locale-data/ru";
+
 import enMessages from "./locales/en-US/translation.json";
 import ruMessages from "./locales/ru-RU/translation.json";
 import { IntlProvider } from "react-intl";

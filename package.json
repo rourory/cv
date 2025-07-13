@@ -4,6 +4,8 @@
   "homepage": "https://rourory.github.io/cv",
   "private": true,
   "dependencies": {
+    "@formatjs/intl-pluralrules": "^5.4.4",
+    "@formatjs/intl-relativetimeformat": "^11.4.11",
     "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
     "@react-three/postprocessing": "^3.0.4",
